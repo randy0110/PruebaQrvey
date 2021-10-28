@@ -15,7 +15,7 @@ import { ModalComponent } from '@app/features/modal/modal.component';
     CommonModule,
     FormsModule
   ],
-  exports:[
+  exports: [
     CountriesComponent
   ]
 })

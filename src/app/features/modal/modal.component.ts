@@ -16,7 +16,7 @@ export class ModalComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        let modal = this;
+        const modal = this;
 
         // ensure id attribute exists
         if (!this.id) {
@@ -28,14 +28,14 @@ export class ModalComponent implements OnInit, OnDestroy {
         document.body.appendChild(this.element);
 
         // close modal on background click
-        this.element.addEventListener('click', function (e: any) {
+        this.element.addEventListener('click', (e: any) => {
             if (e.target.className === 'modal-popup') {
                 modal.close();
             }
         });
 
         // add self (this modal instance) to the modal service so it's accessible from controllers
-        console.log("add modal");
+        console.log('add modal');
         this.modalService.add(this);
     }
 
@@ -58,4 +58,4 @@ export class ModalComponent implements OnInit, OnDestroy {
         document.body.classList.remove('modal-popup-open');
         console.log('modal close called');
     }
-}    
+}

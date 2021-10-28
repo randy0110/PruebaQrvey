@@ -4,6 +4,7 @@ import { HttpClient} from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { environment } from '@environments/environment';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -15,8 +16,7 @@ export class CountriesService {
     private httpClient: HttpClient
     ) { }
 
-    get() {
-      
+    get(): Observable<any> {
       return this.httpClient.get(`${environment.baseApiUrl}/v3/all`);
   }
 }

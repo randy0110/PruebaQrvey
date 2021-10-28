@@ -20,7 +20,8 @@
       "@app/*": ["app/*"],
       "@environments/*": ["environments/*"],
       "@core/*": ["app/core/*"],
-      "@services/*": ["app/core/services/*"]
+      "@services/*": ["app/core/services/*"],
+      "@helpers/*": ["app/helpers/*"]
   }
   }
 }
