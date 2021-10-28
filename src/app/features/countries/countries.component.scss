@@ -1,0 +1,127 @@
+
+.Listcontinentes {
+    width: 15%;
+    float: left;
+    padding: 0 0 0 10px;
+
+    .listcountries{
+    
+        padding: 0 0 0 5px;
+        list-style-type: none;
+
+        .itemcountry {
+            clear: both;
+            padding: 0 20px 0 0px;
+            margin: 0 0 10px 0;
+            .imgcountry{
+                padding: 0 10px 0 0px;
+            }
+        }
+
+        .itemcountry:hover {
+            background-color: rgba(9, 41, 94, 0.3);
+            cursor: pointer;
+        }
+    }
+    
+}
+
+.searchbox{
+    margin-left: 50px;
+    .imputsearch{
+        width: 500px;
+        height: 50px;
+        background: #FFFFFF;
+        border: 1px solid #E0E0E0;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        
+        padding: 10px;
+    }
+    .imputsearch::placeholder {
+        color: #C4C4C4;
+        
+      }
+      .imputsearch:focus {
+        border: 1px solid #E0E0E0 !important;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      }
+
+    .selectsearch{
+        width: 128px;
+        height: 50px;
+        background: #FFFFFF;
+        border: 1px solid #E0E0E0;
+        box-sizing: border-box;
+        margin-left: -179px;
+        color: #4F4F4F;
+        padding-left: 20px;
+    }
+    
+
+    .buttonsearch{
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+
+        background: #21ADCF;
+        border: 1px solid #E0E0E0;
+        box-sizing: border-box;
+        border-radius: 0px 11px 11px 0px;
+        color: white;
+    }
+}
+.bodycountries{
+    margin-left: 50px;
+}
+
+.titleheader{
+    font-weight: bold;
+font-size: 50px;
+line-height: 59px;
+
+color: #09295E;
+    .country{
+        color: #21ADCF;
+    }
+}
+
+.Listcontinentes h1 {
+    color: #09295E;
+    
+}
+
+.imgheader{
+    background: url("../../../assets/img/header1.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 421px;
+}
+
+.headersearch{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+ 
+.titlemodal{
+    color: #09295E;
+    i{
+        color: #BDBDBD;
+        cursor: pointer;
+    }
+}
+
+.detailmodal{
+    color: #4F4F4F;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.bodyEmpty{
+    font-size: 30px;
+    line-height: 35px;
+    color: #BDBDBD;
+    text-align: center;
+}

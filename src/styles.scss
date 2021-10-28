@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    font-family: Roboto;    
+}
+
+.coloryellow{
+    color: #F2C94C !important;
+}
+
+pqrv-popup {
+    /* modals are hidden by default */
+    display: none;
+
+    .modal-popup {
+        /* modal container fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        max-width:850px;
+        min-width:300px;
+        width:50%;
+        margin:auto;
+        min-height:300px;
+
+        /* z-index must be higher than .modal-popup-background */
+        z-index: 1000;
+        
+        /* enables scrolling for tall modals */
+        overflow: auto;
+
+        .modal-popup-body {
+            padding: 20px 20px 20px 40px;
+            background: #fff;
+
+            /* margin exposes part of the modal background */
+            margin: 40px;
+            border-radius: 10px;
+            height: 440px;
+            border: 1px solid #E0E0E0;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    .modal-popup-background {
+        /* modal background fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        /* semi-transparent black  */
+        background-color: rgba(9, 41, 94, 0.7);;
+        z-index: 900;
+    }
+}
+
+body.modal-popup-open {
+    /* body overflow is hidden to hide main scrollbar when modal window is open */
+    overflow: hidden;
+}

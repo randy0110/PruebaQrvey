@@ -1,0 +1,61 @@
+<header>
+    
+   <div class="headersearch">
+
+       
+    
+        <div class="searchbox" >
+            <h1 class="titleheader" >Find any <span class="country">country</span> <br>in the world</h1>
+            <input  [(ngModel)]="textFilter"  (keyup.enter)="setFilter()" class="imputsearch" placeholder="Search country" >
+            <select [(ngModel)]="selectFilter" (change)="setFilter()" class="selectsearch">
+                <option value="" selected>Show All</option>
+                <option value="Favorites" selected>Favorites</option>
+                <option *ngFor="let Continent of listContinents">{{Continent}}</option>
+            </select>
+            <button  (click)="setFilter()" class="buttonsearch" type="button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div> 
+        <div class="imgheader" >
+            
+        </div>
+    </div>
+</header>
+
+<pqrv-popup id="modal1">
+    <h1 class="titlemodal" >{{country?.name?.common}} 
+        <ng-template [ngIf]="isFavorite(country?.name?.common)" [ngIfElse]="notFavorite">
+            <i class="fas fa-star coloryellow" (click)="removeFavorite(country?.name?.common)" ></i>
+        </ng-template>
+        <ng-template #notFavorite>
+            <i class="far fa-star" (click)="addFavorite(country?.name?.common)" ></i>
+        </ng-template>        
+    </h1>
+    <p class="detailmodal" ><b>Region:</b> {{country?.region}}</p>
+    <p class="detailmodal" ><b>Population:</b> {{country?.population}}</p>
+    <p class="detailmodal" ><b>Capital:</b> {{country?.capital}}</p>
+    <p class="detailmodal" ><b>Currency:</b> {{getCurrencies(country?.currencies)}}</p>
+    <p class="detailmodal"><b>Language:</b> {{getlanguage(country?.languages)}}</p>
+    <p class="detailmodal"><b>Border Countries:</b> {{getborders(country?.borders)}}</p>
+    <p class="detailmodal"><b>Flag:</b> </p>
+    <img class="imgcountry" src="{{country?.flags[1]}}"  [alt]="country?.name?.common" width="150.95px" height="94.3px" />
+</pqrv-popup>
+
+
+<div class="bodycountries">
+<div class="Listcontinentes" *ngFor="let continent of continentsFilter" >
+    <h1>{{continent.name}}</h1>
+        <ul class="listcountries">
+            <li class="itemcountry" *ngFor="let itemCountry of continent.Countries" (click)="openModal(itemCountry)" >
+                <img class="imgcountry" src="{{itemCountry.flags[1]}}" [alt]="itemCountry.name.common" width="30.19px" height="18.86px" /> {{itemCountry.name.common}}
+                <ng-template [ngIf]="isFavorite(itemCountry?.name?.common)" >
+                    <i class="fas fa-star coloryellow"  ></i>
+                </ng-template>
+            </li>
+        </ul>
+</div>
+</div>
+
+<div class="bodyEmpty" *ngIf="continentsFilterEmpty" >
+    <p>No results found</p>
+</div>
